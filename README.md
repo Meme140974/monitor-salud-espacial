@@ -73,3 +73,12 @@ frontend/
 - Agencia Espacial Canadiense: efectos del espacio en el cuerpo humano y medición de radiación de neutrones (CANS).
 
 Los datos de la demostración son sintéticos, generados a partir de estas fuentes (por ejemplo, pérdida ósea de hasta 1.5 % por mes).
+
+## Uso de Súper Inteligencia (SI)
+
+Este proyecto se desarrolló con apoyo de herramientas de SI:
+
+- Claude (Anthropic): planeación del proyecto, generación y revisión del código del backend (Django) y del frontend (React), datos sintéticos de demostración, README y textos del proyecto.
+- Canva AI: generación de la presentación de demostración.
+
+El equipo definió el enfoque, revisó, probó y ejecutó todo el código, y es responsable del resultado final. No se usaron logotipos ni elementos de marca de la NASA.
