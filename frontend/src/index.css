@@ -1,0 +1,66 @@
+@import "@fontsource/atkinson-hyperlegible-next/400.css";
+@import "@fontsource/atkinson-hyperlegible-next/500.css";
+@import "@fontsource/atkinson-hyperlegible-next/600.css";
+@import "@fontsource/atkinson-hyperlegible-next/700.css";
+@import "@fontsource/atkinson-hyperlegible-mono/400.css";
+@import "@fontsource/atkinson-hyperlegible-mono/500.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #0b0d10;
+  color-scheme: dark;
+  scrollbar-color: #323843 #0b0d10;
+}
+
+body {
+  @apply bg-fondo text-tinta font-sans antialiased min-h-screen;
+  caret-color: #e8e2d4;
+}
+
+::selection {
+  background: rgba(232, 226, 212, 0.22);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0b0d10; }
+::-webkit-scrollbar-thumb { background: #323843; border-radius: 10px; border: 2px solid #0b0d10; }
+::-webkit-scrollbar-thumb:hover { background: #454c59; }
+
+:focus-visible {
+  outline: 2px solid #e8e2d4;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.cifra { font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+
+a { text-underline-offset: 3px; }
+
+/* ---------- movimiento ---------- */
+@keyframes subir { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes pulsoRojo { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+@keyframes trazarLinea { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+@keyframes flotarPts { 0% { opacity: 0; transform: translateY(6px); } 30% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@keyframes aparecer { from { opacity: 0; filter: blur(6px); } to { opacity: 1; filter: blur(0); } }
+@keyframes halo { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(2.2); opacity: 0; } }
+
+.anim-subir { animation: subir 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-aparecer { animation: aparecer 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-pulso { animation: pulsoRojo 1.6s ease-in-out infinite; }
+.anim-flotar-pts { animation: flotarPts 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; }
+.check-dibujo { stroke-dasharray: 24; stroke-dashoffset: 24; animation: trazarLinea 0.4s ease-out forwards; }
+.halo { animation: halo 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+
+.alerta-saliendo { transition: opacity 0.35s, transform 0.35s; opacity: 0; transform: translateX(12px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

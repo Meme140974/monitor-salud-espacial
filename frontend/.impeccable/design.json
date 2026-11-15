@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-15T00:00:00Z",
+  "title": "Design System: Monitor de salud",
+  "extensions": {
+    "colorMeta": {
+      "marfil": { "role": "primary", "displayName": "Marfil Tela Beta", "canonical": "#E8E2D4", "tonalRamp": ["#2E2B25", "#4A463D", "#68635A", "#878278", "#A8A296", "#C8C2B5", "#E8E2D4", "#F6F3EC"] },
+      "verde": { "role": "tertiary", "displayName": "Verde Saludable", "canonical": "#8FB8A0", "tonalRamp": ["#0E2A1C", "#15432D", "#1F6342", "#2C8559", "#3AA672", "#8FB8A0", "#8EDBB4", "#D3F2E2"] },
+      "ambar": { "role": "tertiary", "displayName": "Ámbar Vigilar", "canonical": "#D2B07A", "tonalRamp": ["#2E200A", "#4A3410", "#6B4C17", "#8F661F", "#B78428", "#D2B07A", "#F0CC85", "#F9EBCC"] },
+      "rojo": { "role": "tertiary", "displayName": "Rojo Crítico", "canonical": "#D98B7E", "tonalRamp": ["#33110D", "#521B15", "#77271F", "#9E3429", "#C84536", "#D98B7E", "#F69D92", "#FCDAD5"] },
+      "fondo": { "role": "neutral", "displayName": "Grafito de cabina", "canonical": "#0B0D10", "tonalRamp": ["#0B0D10", "#13161B", "#1A1E24", "#252A32", "#323843", "#454C59", "#99A0AB", "#EDEFF2"] },
+      "panel": { "role": "neutral", "displayName": "Hoja", "canonical": "#13161B", "tonalRamp": ["#0B0D10", "#13161B", "#1A1E24", "#252A32", "#323843", "#454C59", "#99A0AB", "#EDEFF2"] },
+      "panel2": { "role": "neutral", "displayName": "Hoja elevada", "canonical": "#1A1E24", "tonalRamp": ["#0B0D10", "#13161B", "#1A1E24", "#252A32", "#323843", "#454C59", "#99A0AB", "#EDEFF2"] },
+      "linea": { "role": "neutral", "displayName": "Filete", "canonical": "#252A32", "tonalRamp": ["#0B0D10", "#13161B", "#1A1E24", "#252A32", "#323843", "#454C59", "#99A0AB", "#EDEFF2"] },
+      "linea2": { "role": "neutral", "displayName": "Filete fuerte", "canonical": "#323843", "tonalRamp": ["#0B0D10", "#13161B", "#1A1E24", "#252A32", "#323843", "#454C59", "#99A0AB", "#EDEFF2"] },
+      "tinta": { "role": "neutral", "displayName": "Tinta", "canonical": "#EDEFF2", "tonalRamp": ["#0B0D10", "#13161B", "#1A1E24", "#252A32", "#323843", "#454C59", "#99A0AB", "#EDEFF2"] },
+      "tenue": { "role": "neutral", "displayName": "Tinta tenue", "canonical": "#99A0AB", "tonalRamp": ["#0B0D10", "#13161B", "#1A1E24", "#252A32", "#323843", "#454C59", "#99A0AB", "#EDEFF2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Titular único del acceso." },
+      "headline": { "displayName": "Headline", "purpose": "h1 de cada página." },
+      "title": { "displayName": "Title", "purpose": "Cabecera del panel de sistema." },
+      "body": { "displayName": "Body", "purpose": "Mensajes, descripciones y filas; párrafos a 65ch." },
+      "label": { "displayName": "Label", "purpose": "Palabra de estado, tendencia y metadatos." },
+      "cifra": { "displayName": "Cifra", "purpose": "Valores medidos, puntos y racha; solo números." }
+    },
+    "shadows": [
+      { "name": "hoja", "value": "0 1px 0 rgba(255,255,255,0.03) inset, 0 18px 40px -24px rgba(0,0,0,0.8)", "purpose": "Hojas que se superponen al flujo (panel de sistema)." },
+      { "name": "contorno-activo", "value": "inset 0 0 0 1px #323843", "purpose": "Pestaña activa del control segmentado." },
+      { "name": "subrayado-seleccion", "value": "inset 0 -2px 0 #E8E2D4", "purpose": "Sistema seleccionado en la leyenda bajo la figura." },
+      { "name": "foco", "value": "outline: 2px solid #E8E2D4; outline-offset: 2px", "purpose": "Foco visible global." }
+    ],
+    "motion": [
+      { "name": "ease-salida", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Curva de toda entrada y de la barra de avance." },
+      { "name": "subir", "value": "translateY(8px) a 0, opacidad 0 a 1, 0.5s", "purpose": "Entrada de hojas, alertas y filas; escalonado 35-60ms." },
+      { "name": "aparecer", "value": "blur(6px) a 0, 0.9s", "purpose": "Entrada de la escena 3D en el acceso." },
+      { "name": "pulso-critico", "value": "opacidad 1 a 0.45, 1.6s ease-in-out infinito", "purpose": "Icono de alerta crítica." },
+      { "name": "halo", "value": "scale 0.6 a 2.2, 1.8s infinito", "purpose": "Punto del cuerpo crítico o seleccionado." },
+      { "name": "alerta-saliendo", "value": "opacity 0, translateX(12px), 0.35s", "purpose": "Alerta marcada como atendida." },
+      { "name": "escaneo", "value": "2.2s, una vez al cargar", "purpose": "Línea de luz marfil que recorre el cuerpo." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal de la vista; marfil sólido, uno por vista.",
+      "html": "<button class=\"ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4\"/><polyline points=\"10 17 15 12 10 7\"/><line x1=\"15\" x2=\"3\" y1=\"12\" y2=\"12\"/></svg>Iniciar sesión</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; background: #E8E2D4; color: #0B0D10; border: none; border-radius: 6px; font: 500 14px/1 'Atkinson Hyperlegible Next', system-ui, sans-serif; cursor: pointer; transition: opacity 0.15s; } .ds-btn-primary:hover { opacity: 0.9; } .ds-btn-primary:focus-visible { outline: 2px solid #E8E2D4; outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.35; cursor: not-allowed; }"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción de fila o de cabecera (Marcar atendida, Actualizar).",
+      "html": "<button class=\"ds-btn-secondary\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 6 7 17l-5-5\"/><path d=\"m22 10-7.5 7.5L13 16\"/></svg>Marcar atendida</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; background: transparent; color: #EDEFF2; border: 1px solid #323843; border-radius: 6px; font: 400 14px/1 'Atkinson Hyperlegible Next', system-ui, sans-serif; cursor: pointer; transition: background 0.15s, border-color 0.15s; } .ds-btn-secondary:hover { background: #1A1E24; border-color: rgba(232,226,212,0.5); } .ds-btn-secondary:focus-visible { outline: 2px solid #E8E2D4; outline-offset: 2px; }"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Input de credenciales o de valor medido; más oscuro que la hoja.",
+      "html": "<label class=\"ds-field\"><span>Valor</span><input class=\"ds-input\" placeholder=\"72\" /></label>",
+      "css": ".ds-field { display: block; color: #EDEFF2; font: 500 14px 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-input { display: block; margin-top: 6px; height: 44px; width: 260px; padding: 0 14px; background: #0B0D10; color: #EDEFF2; border: 1px solid #323843; border-radius: 6px; font: 400 15px 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; transition: border-color 0.15s; } .ds-input::placeholder { color: #99A0AB; } .ds-input:focus { outline: none; border-color: rgba(232,226,212,0.7); }"
+    },
+    {
+      "name": "Navegación segmentada",
+      "kind": "nav",
+      "refersTo": "nav-segment",
+      "description": "Pestañas Estado / Rutina en la cabecera.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-tab is-active\" href=\"#\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 12h-4l-3 9L9 3l-3 9H2\"/></svg>Estado</a><a class=\"ds-nav-tab\" href=\"#\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\"/><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"/></svg>Rutina</a></nav>",
+      "css": ".ds-nav { display: inline-flex; gap: 4px; padding: 4px; background: #13161B; border: 1px solid #252A32; border-radius: 8px; } .ds-nav-tab { display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 6px; color: #99A0AB; font: 400 14px 'Atkinson Hyperlegible Next', system-ui, sans-serif; text-decoration: none; transition: color 0.2s; } .ds-nav-tab:hover { color: #EDEFF2; } .ds-nav-tab.is-active { background: #1A1E24; color: #EDEFF2; box-shadow: inset 0 0 0 1px #323843; } .ds-nav-tab:focus-visible { outline: 2px solid #E8E2D4; outline-offset: 2px; }"
+    },
+    {
+      "name": "Chip Inusual",
+      "kind": "chip",
+      "refersTo": "chip-inusual",
+      "description": "Marca de anomalía personal en una fila vital.",
+      "html": "<span class=\"ds-chip\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 7V5a2 2 0 0 1 2-2h2\"/><path d=\"M17 3h2a2 2 0 0 1 2 2v2\"/><path d=\"M21 17v2a2 2 0 0 1-2 2h-2\"/><path d=\"M7 21H5a2 2 0 0 1-2-2v-2\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"m16 16-1.9-1.9\"/></svg>Inusual</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; border-radius: 6px; background: rgba(232,226,212,0.1); color: #E8E2D4; font: 500 11px 'Atkinson Hyperlegible Next', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Hoja",
+      "kind": "card",
+      "refersTo": "hoja",
+      "description": "Superficie base de tarjetas y secciones.",
+      "html": "<section class=\"ds-hoja\"><h2>Indicadores</h2><p>8 en seguimiento</p></section>",
+      "css": ".ds-hoja { width: 320px; padding: 20px; background: #13161B; border: 1px solid #252A32; border-radius: 14px; color: #EDEFF2; font: 400 14px/1.625 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-hoja h2 { margin: 0; font-size: 16px; font-weight: 500; } .ds-hoja p { margin: 4px 0 0; color: #99A0AB; font-size: 12px; }"
+    },
+    {
+      "name": "Alerta crítica",
+      "kind": "custom",
+      "refersTo": "hoja",
+      "description": "Hoja teñida por estado, con icono, palabra y recomendación.",
+      "html": "<article class=\"ds-alerta\"><span class=\"ds-alerta-icono\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z\"/><path d=\"M12 8v4\"/><path d=\"M12 16h.01\"/></svg></span><div><h3>Frecuencia cardiaca elevada <em>Crítico</em></h3><p>92 lpm en reposo.</p><p class=\"ds-alerta-que\"><strong>Qué hacer: </strong>Repite la medición tras 10 minutos.</p></div></article>",
+      "css": ".ds-alerta { display: flex; gap: 14px; width: 420px; padding: 16px; border: 1px solid rgba(240,96,79,0.25); border-radius: 14px; background: linear-gradient(0deg, rgba(240,96,79,0.05), rgba(240,96,79,0.05)), #13161B; color: #EDEFF2; font: 400 14px/1.625 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-alerta-icono { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px; background: rgba(240,96,79,0.12); color: #D98B7E; animation: ds-pulso 1.6s ease-in-out infinite; } @keyframes ds-pulso { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } } .ds-alerta h3 { margin: 0; font-size: 16px; font-weight: 500; } .ds-alerta em { font-style: normal; font-size: 12px; color: #D98B7E; margin-left: 6px; } .ds-alerta p { margin: 4px 0 0; color: #99A0AB; } .ds-alerta .ds-alerta-que { color: #EDEFF2; } .ds-alerta strong { color: #E8E2D4; font-weight: 500; }"
+    },
+    {
+      "name": "Fila vital",
+      "kind": "custom",
+      "refersTo": "hoja",
+      "description": "Indicador con estado (icono + palabra), tendencia, historial y cifra.",
+      "html": "<a class=\"ds-fila\" href=\"#\"><span class=\"ds-fila-nombre\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#8FB8A0\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m9 12 2 2 4-4\"/></svg><span>Presión sistólica<small><b>Saludable</b> Estable</small></span></span><svg class=\"ds-fila-hist\" viewBox=\"0 0 100 24\" preserveAspectRatio=\"none\"><polyline points=\"0,18 25,8 50,14 75,6 100,12\" fill=\"none\" stroke=\"#454C59\" stroke-width=\"1.25\" vector-effect=\"non-scaling-stroke\"/></svg><span class=\"ds-fila-cifra\">118<small>mmHg</small></span></a>",
+      "css": ".ds-fila { display: grid; grid-template-columns: minmax(0,1fr) 64px auto; align-items: center; gap: 16px; width: 440px; padding: 14px 20px; color: #EDEFF2; text-decoration: none; background: #13161B; font: 400 14px/1.375 'Atkinson Hyperlegible Next', system-ui, sans-serif; transition: background 0.15s; } .ds-fila:hover { background: #1A1E24; } .ds-fila:focus-visible { outline: 2px solid #E8E2D4; outline-offset: 2px; } .ds-fila-nombre { display: flex; gap: 12px; align-items: flex-start; } .ds-fila-nombre small { display: block; margin-top: 4px; font-size: 12px; color: #99A0AB; } .ds-fila-nombre b { color: #8FB8A0; font-weight: 500; margin-right: 8px; } .ds-fila-hist { width: 64px; height: 24px; } .ds-fila-cifra { font: 500 18px 'Atkinson Hyperlegible Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; text-align: right; } .ds-fila-cifra small { margin-left: 4px; font-size: 12px; color: #99A0AB; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La sala de imagen en ciclo nocturno",
+    "overview": "Una suite de imagen médica a bordo, con la cabina en luz de noche. El suelo es grafito casi negro, las superficies son hojas apenas más claras separadas por filetes de 1px, y el único acento cálido es un marfil de tela Beta reservado para la acción principal y la selección. El centro de gravedad es un maniquí 3D de cerámica pulida, iluminado a contraluz sobre un plato giratorio lento: cada sistema corporal se ancla a su lugar en el cuerpo, no a un dibujo plano.\n\nLa densidad es de instrumento clínico: filas compactas, cifras tabulares en Atkinson Hyperlegible Mono, estado siempre con icono más palabra. La calma es el modo por defecto; la urgencia solo aparece cuando el dato es rojo (el icono crítico pulsa, la alerta se tiñe). Se rechazó explícitamente la consola azul marino con campo de estrellas, brillos neón e IBM Plex, y el pictograma humano en 2D.",
+    "keyCharacteristics": [
+      "Grafito oscuro en capas tonales (fondo, hoja, hoja elevada), sin colores de marca saturados.",
+      "Un solo acento marfil (#E8E2D4) para acción primaria, selección y luz de escena.",
+      "Verde / ámbar / rojo planos, solo para estado, siempre acompañados de icono lucide y texto.",
+      "Atkinson Hyperlegible Next para la interfaz, Atkinson Hyperlegible Mono solo para mediciones.",
+      "El cuerpo 3D es la pieza firma; la lista de sistemas bajo él funciona como leyenda."
+    ],
+    "rules": [
+      { "name": "The One Ivory Rule", "body": "El marfil es el único color no semántico con croma. Marca exactamente la acción primaria o lo seleccionado; si aparece en dos botones de la misma vista, uno sobra.", "section": "colors" },
+      { "name": "The Never Color-Only Rule", "body": "Verde, ámbar y rojo jamás aparecen solos: cada uso lleva su icono (CircleCheck, TriangleAlert, OctagonAlert) y su palabra (Saludable, Vigilar, Crítico). Los tintes de estado se aplican como color sobre la hoja en baja opacidad (borde al 25%, fondo al 5%, cuadro de icono al 12%), nunca como relleno sólido de una superficie.", "section": "colors" },
+      { "name": "The Mono-Means-Measure Rule", "body": "Atkinson Hyperlegible Mono se usa solo para valores medidos, puntos, contadores y credenciales de demo. Nunca para etiquetas, títulos ni navegación.", "section": "typography" },
+      { "name": "The Sentence-Case Rule", "body": "Todo el texto va en minúsculas de oración; no hay mayúsculas con tracking ni rótulos sobre los titulares.", "section": "typography" },
+      { "name": "The Tonal-First Rule", "body": "Para separar, primero sube un paso de superficie o añade un filete de 1px; la sombra de hoja queda para lo que se superpone de verdad.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do emparejar cada color de estado con su icono lucide y su palabra (Saludable, Vigilar, Crítico).",
+      "Do reservar el marfil (#E8E2D4) para la acción primaria, la selección y la luz de escena.",
+      "Do escribir toda medición en Atkinson Hyperlegible Mono tabular con la unidad al lado en 12px tenue.",
+      "Do separar superficies por paso tonal y filete de 1px antes que por sombra.",
+      "Do usar solo iconos lucide; los emojis que lleguen del backend se sustituyen por iconos (iconos.ts).",
+      "Do mantener el aviso de que la herramienta no sustituye a los cirujanos de vuelo en el pie de cada vista."
+    ],
+    "donts": [
+      "Don't volver a la consola azul marino con campo de estrellas, brillos neón o IBM Plex.",
+      "Don't dibujar el cuerpo como pictograma 2D; el cuerpo es el modelo 3D.",
+      "Don't rellenar superficies con verde, ámbar o rojo sólido; el estado tiñe a baja opacidad.",
+      "Don't usar mayúsculas con tracking ni rótulos encima de los titulares.",
+      "Don't animar en bucle la interfaz plana; los bucles quedan para el cuerpo (reposo y giro lento), el halo del punto crítico o seleccionado y el pulso del icono crítico."
+    ]
+  }
+}
